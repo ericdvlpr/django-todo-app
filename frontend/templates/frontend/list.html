@@ -121,7 +121,7 @@
       
       
 
-      var url = 'http://django-todo-crud-app.herokuapp.com/api/task-list/'
+      var url = 'https://django-todo-crud-app.herokuapp.com/api/task-list/'
 
       fetch(url)
       .then((resp)=>resp.json())
@@ -201,10 +201,10 @@
     var form = document.getElementById('form-wrapper')
     form.addEventListener('submit',function(e){
       e.preventDefault()
-      var url = `http://django-todo-crud-app.herokuapp.com/api/task-create/`
+      var url = `https://django-todo-crud-app.herokuapp.com/api/task-create/`
 
       if(activeItem != null){
-        var url = `http://django-todo-crud-app.herokuapp.com/api/task-update/${activeItem.id}/`
+        var url = `https://django-todo-crud-app.herokuapp.com/api/task-update/${activeItem.id}/`
         activeItem = null
       }
       var title = document.getElementById('title').value
@@ -231,7 +231,7 @@
 
     function deleteItem(item){
       activeItem = item
-     fetch(`http://django-todo-crud-app.herokuapp.com/api/task-delete/${item.id}`,{
+     fetch(`https://django-todo-crud-app.herokuapp.com/api/task-delete/${item.id}`,{
        method:'DELETE',
        headers:{
         'Content-type':'application/json',
@@ -245,7 +245,7 @@
     function strikeUnstrike(item){
 
       item.completed = !item.completed
-      fetch(`http://django-todo-crud-app.herokuapp.com/api/task-update/${item.id}`,{
+      fetch(`https://django-todo-crud-app.herokuapp.com/api/task-update/${item.id}`,{
        method:'POST',
        headers:{
         'Content-type':'application/json',
