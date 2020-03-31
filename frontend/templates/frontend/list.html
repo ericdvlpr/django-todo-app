@@ -121,7 +121,7 @@
       
       
 
-      var url = 'http://127.0.0.1:8000/api/task-list/'
+      var url = 'http://django-todo-crud-app.herokuapp.com/api/task-list/'
 
       fetch(url)
       .then((resp)=>resp.json())
@@ -201,10 +201,10 @@
     var form = document.getElementById('form-wrapper')
     form.addEventListener('submit',function(e){
       e.preventDefault()
-      var url = `http://127.0.0.1:8000/api/task-create/`
+      var url = `http://django-todo-crud-app.herokuapp.com/api/task-create/`
 
       if(activeItem != null){
-        var url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+        var url = `http://django-todo-crud-app.herokuapp.com/api/task-update/${activeItem.id}/`
         activeItem = null
       }
       var title = document.getElementById('title').value
@@ -231,7 +231,7 @@
 
     function deleteItem(item){
       activeItem = item
-     fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}`,{
+     fetch(`http://django-todo-crud-app.herokuapp.com/api/task-delete/${item.id}`,{
        method:'DELETE',
        headers:{
         'Content-type':'application/json',
@@ -245,7 +245,7 @@
     function strikeUnstrike(item){
 
       item.completed = !item.completed
-      fetch(`http://127.0.0.1:8000/api/task-update/${item.id}`,{
+      fetch(`http://django-todo-crud-app.herokuapp.com/api/task-update/${item.id}`,{
        method:'POST',
        headers:{
         'Content-type':'application/json',
